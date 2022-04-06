@@ -3,17 +3,20 @@
   height: 95vh;
 }
 .filterDialog {
-  display: flex;
-  flex-direction: column;
   width: 80%;
   height: auto;
-  background: rgb(175, 175, 175);
+  display: flex;
+  flex-direction: column;
   margin: 20px auto;
   padding: 10px;
+  background: rgb(175, 175, 175);
   border-radius: 5px;
   font-size: 1.2rem;
   gap: 10px;
 }
+
+/* available select button */
+
 .available select {
   background-color: gray;
   border: none;
@@ -31,7 +34,6 @@
   color: white;
   font-weight: bold;
 }
-
 .available select option {
   padding: 5px;
 }
@@ -40,6 +42,8 @@
   font-weight: bold;
   padding: 4px;
 }
+
+/* percent slider */
 .percent {
   display: flex;
   flex-direction: column;
@@ -115,6 +119,8 @@
   cursor: pointer;
   border-radius: 5px;
 }
+
+/* buttons */
 .buttons {
   display: flex;
   flex-direction: row;
@@ -123,8 +129,8 @@
 }
 .buttons button {
   padding: 4px;
+  border-radius: 5px;
   background: darkgray;
   color: black;
   font-weight: bold;
-  border-radius: 5px;
 }

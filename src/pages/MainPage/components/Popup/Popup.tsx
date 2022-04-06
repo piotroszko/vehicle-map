@@ -1,6 +1,6 @@
 import React from "react";
 import useVehicleInfo from "./../../../../hooks/useVehicleInfo";
-import "./Map.css";
+import "./Popup.css";
 
 type Props = {
   marker: any;
