@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import axios from "axios";
 const infos = [
   {
     discriminator: "vehicle_details",
@@ -129,5 +130,17 @@ const infos = [
 ];
 export default function useVehicleInfo(id: string) {
   const [info, setInfo] = useState(infos.find((x) => x.id === id));
+  useEffect(() => {
+    fetchVehicle();
+  });
+  const fetchVehicle = () => {
+    // axios.get("https://android.jrotor.com/api/vehicles/" + id)
+    //   .then((result) => {
+    //     setInfo(result.data);
+    //   })
+    //   .catch((err) => {
+    //     console.log(` Error on GET VEHICL ID: ${ id } REQUEST: ${ err.message }`);
+    //   });
+  };
   return { info };
 }

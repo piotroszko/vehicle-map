@@ -88,22 +88,13 @@ export default function useVehicles() {
   useEffect(() => {
     fetchVehicles();
   });
-  const fetchVehicles = async () => {
-    // await fetch("http://android.jrotor.com/api/map?objectType=VEHICLE", {
-    //   method: "GET",
-    //   mode: "cors",
-    //   headers: {
-    //     Accept: "*/*",
-    //     Host: "android.jrotor.com",
-    //     "Access-Control-Allow-Origin": "*",
-    //     Referer: "android.jrotor.com",
-    //   },
-    // })
+  const fetchVehicles = () => {
+    // axios.get("http://android.jrotor.com/api/map?objectType=VEHICLE")
     //   .then((result) => {
-    //     console.log(result);
+    //     setVehicles(result.data);
     //   })
     //   .catch((err) => {
-    //     console.log(" Error on GET VEHICLES REQUEST: " + err.message);
+    //     console.log(` Error on GET VEHICLES REQUEST: ${ err.message } `);
     //   });
   };
   return { vehicles };
