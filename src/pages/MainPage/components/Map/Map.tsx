@@ -37,14 +37,14 @@ const Map = () => {
     setMap(null);
   }, []);
 
-  return isLoaded ? (
+  return isLoaded && vehicles ? (
     <GoogleMap
       mapContainerStyle={containerStyle}
       center={
         vehicles.length > 0
           ? {
-              lat: vehicles[0].location.latitude,
-              lng: vehicles[0].location.longitude,
+              lat: vehicles[0]["location"]["latitude"],
+              lng: vehicles[0]["location"]["longitude"],
             }
           : {
               lat: 52.22977,
@@ -59,23 +59,23 @@ const Map = () => {
           vehicles
             .filter((v) => {
               if (filters.available !== "")
-                return filters.available.toUpperCase() === v.status;
+                return filters.available.toUpperCase() === v["status"];
               else return true;
             })
-            .filter((v) => filters.batteryLevelPct <= v.batteryLevelPct)
+            .filter((v) => filters.batteryLevelPct <= v["batteryLevelPct"])
             .map((vehicle) => (
               <Marker
-                key={vehicle.id}
+                key={vehicle["id"]}
                 clusterer={clusterer}
-                icon={vehicle.status === "AVAILABLE" ? CarOn : CarOff}
+                icon={vehicle["status"] === "AVAILABLE" ? CarOn : CarOff}
                 onClick={() => {
-                  setClickedMarker(vehicle.id);
+                  setClickedMarker(vehicle["id"]);
                 }}
                 position={{
-                  lat: vehicle.location.latitude,
-                  lng: vehicle.location.longitude,
+                  lat: vehicle["location"]["latitude"],
+                  lng: vehicle["location"]["longitude"],
                 }}>
-                {clickedMarker === vehicle.id ? (
+                {clickedMarker === vehicle["id"] ? (
                   <InfoWindow
                     onCloseClick={() => {
                       setClickedMarker("");

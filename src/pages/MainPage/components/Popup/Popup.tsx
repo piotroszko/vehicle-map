@@ -7,7 +7,7 @@ type Props = {
 };
 const Popup = ({ marker }: Props) => {
   const { info } = useVehicleInfo(marker.id);
-  return (
+  return info && info["picture"] && info["tariff"] ? (
     <div className="popup">
       <div className="info">
         <div className="battery">
@@ -18,8 +18,8 @@ const Popup = ({ marker }: Props) => {
             style={{ width: marker.batteryLevelPct.toString() + "%" }}></div>
         </div>
         <div className="tariff">
-          <p>{info?.tariff.name}</p>
-          <p>{info?.tariff.description}</p>
+          <p>{info && info["tariff"] ? info["tariff"]["name"] : ""}</p>
+          <p>{info && info["tariff"] ? info["tariff"]["description"] : ""}</p>
         </div>
       </div>
       <div className="car">
@@ -30,20 +30,23 @@ const Popup = ({ marker }: Props) => {
             <p>{marker.platesNumber}</p>
           </div>
           <div className="brandModel">
-            <p>{info?.year.toString()}</p>
+            <p>{info ? info["year"] : ""}</p>
             <p>|</p>
-            <p>{info?.brand}</p>
+            <p>{info ? info["brand"] : ""}</p>
             <p>|</p>
-            <p>{info?.model}</p>
+            <p>{info ? info["model"] : ""}</p>
           </div>
         </div>
         <img
           alt=""
           src={
-            "https://android.jrotor.com/api/attachments/" + info?.picture.id
+            "https://android.jrotor.com/api/attachments/" +
+            (info && info["picture"] ? info["picture"]["id"] : "")
           }></img>
       </div>
     </div>
+  ) : (
+    <div> Dane nie zostały poprawnie wczytane dla wybrnaego pojazdu. </div>
   );
 };
 
