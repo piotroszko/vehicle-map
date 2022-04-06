@@ -30,8 +30,6 @@ const Map = () => {
   const [map, setMap] = useState(null);
 
   const onLoad = useCallback(function callback(map) {
-    const bounds = new window.google.maps.LatLngBounds();
-    map.fitBounds(bounds);
     setMap(map);
   }, []);
 
@@ -42,10 +40,17 @@ const Map = () => {
   return isLoaded ? (
     <GoogleMap
       mapContainerStyle={containerStyle}
-      center={{
-        lat: 52.22977,
-        lng: 21.01178,
-      }}
+      center={
+        vehicles.length > 0
+          ? {
+              lat: vehicles[0].location.latitude,
+              lng: vehicles[0].location.longitude,
+            }
+          : {
+              lat: 52.22977,
+              lng: 21.01178,
+            }
+      }
       zoom={14}
       onLoad={onLoad}
       onUnmount={onUnmount}>
