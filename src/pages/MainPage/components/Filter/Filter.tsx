@@ -13,7 +13,7 @@ const Filter = () => {
   };
   const clearFilters = () => {
     setPercent(0);
-    setAvailable("null");
+    setAvailable("");
     if (filters.setAvailable) filters.setAvailable("");
     if (filters.setBatteryLevelPct) filters.setBatteryLevelPct(0);
   };
