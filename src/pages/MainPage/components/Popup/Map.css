@@ -1,0 +1,153 @@
+.popup {
+  display: flex;
+  flex-direction: row;
+}
+
+.info {
+  position: relative;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 10rem;
+  height: 10rem;
+  justify-items: center;
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 10px;
+}
+.info .battery {
+  width: 90%;
+  border: 1px solid black;
+  border-radius: 5px;
+  height: 1rem;
+  z-index: 20;
+  position: relative;
+  margin: 0 auto;
+}
+.info .battery .fill {
+  position: absolute;
+  background-color: rgb(0, 255, 0);
+  width: 0%;
+  left: 0;
+  top: 0;
+  height: 100%;
+  z-index: 10;
+}
+.info .battery .percent {
+  position: absolute;
+  margin: 1px;
+  font-size: 12px;
+  font-weight: bold;
+  z-index: 30;
+  width: 100%;
+  height: 100%;
+}
+.info .battery .km {
+  visibility: hidden;
+  position: absolute;
+  margin: 1px;
+  font-size: 12px;
+  font-weight: bold;
+  z-index: 30;
+  width: 100%;
+  height: 100%;
+}
+.info .battery:hover .percent {
+  visibility: hidden;
+}
+.info .battery:hover .km {
+  visibility: visible;
+}
+.info .tariff {
+  display: flex;
+  flex-direction: column;
+}
+.info .tariff p {
+  margin: 5px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+.info .tariff p:nth-child(1) {
+  margin: 5px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+.info .tariff p:nth-child(2) {
+  margin: 5px;
+  font-style: italic;
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+.car {
+  width: max-content;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 18rem;
+  height: 10rem;
+}
+.car .carInfo {
+  margin: 0 auto;
+  margin-top: auto;
+  padding: 5px;
+  border-radius: 10px;
+  background: rgba(143, 143, 143, 0.692);
+}
+.car .plate {
+  color: black;
+  z-index: 1;
+  border: 2px solid black;
+  padding: 2px;
+  padding-left: 0;
+  width: min-content;
+  border-radius: 5px;
+  margin: 0 auto;
+  background: white;
+  width: max-content;
+  display: flex;
+  flex-direction: row;
+  height: 1rem;
+  position: relative;
+}
+.car .plate p {
+  margin: 0;
+  font-weight: bold;
+  text-transform: uppercase;
+  width: min-content;
+  padding-left: 5px;
+}
+.car .plate div {
+  background: blue;
+  width: 0.3rem;
+  height: 130%;
+  left: -1px;
+  top: 0;
+  padding: 0;
+  height: 100%;
+  margin-right: 3px;
+  position: absolute;
+}
+.car .brandModel {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  margin: 10px auto;
+  padding: 5px;
+  background: rgba(128, 128, 128, 0.856);
+  border-radius: 3px;
+}
+.car .brandModel p {
+  margin: 0;
+  font-weight: bold;
+}
+
+.car img {
+  margin: 0 auto;
+  border-radius: 10px;
+  max-width: 18rem;
+  max-height: 14rem;
+  position: absolute;
+  z-index: -1;
+}

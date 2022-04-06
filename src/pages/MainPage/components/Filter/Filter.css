@@ -1,0 +1,130 @@
+.filter {
+  width: 30vw;
+  height: 95vh;
+}
+.filterDialog {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  height: auto;
+  background: rgb(175, 175, 175);
+  margin: 20px auto;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  gap: 10px;
+}
+.available select {
+  background-color: gray;
+  border: none;
+  outline: none;
+  padding: 4px;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+}
+.available select:focus-visible {
+  border: none;
+  outline: none;
+  padding: 4px;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+}
+
+.available select option {
+  padding: 5px;
+}
+.available select option {
+  padding: 5px;
+  font-weight: bold;
+  padding: 4px;
+}
+.percent {
+  display: flex;
+  flex-direction: column;
+}
+.slidecontainer {
+  width: 100%;
+}
+
+.containerSlider {
+  position: relative;
+  max-width: 15rem;
+  width: 100%;
+  margin: 0 auto;
+}
+.containerSlider .left {
+  position: absolute;
+  top: 0;
+  left: 10%;
+  font-weight: bold;
+  color: white;
+  margin: 0;
+  z-index: 5;
+}
+.containerSlider .right {
+  position: absolute;
+  top: 0;
+  right: 10%;
+  font-weight: bold;
+  color: black;
+  margin: 0;
+  z-index: 5;
+}
+
+.slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  max-width: 15rem;
+  height: 25px;
+
+  background: linear-gradient(
+    90deg,
+    rgba(255, 4, 4, 1) 0%,
+    rgba(44, 255, 0, 1) 48%
+  );
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+  border-radius: 5px;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  z-index: 5;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 10px;
+  height: 25px;
+  background: black;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.slider::-moz-range-thumb {
+  z-index: 10;
+  width: 10px;
+  height: 25px;
+  background: black;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: center;
+}
+.buttons button {
+  padding: 4px;
+  background: darkgray;
+  color: black;
+  font-weight: bold;
+  border-radius: 5px;
+}
