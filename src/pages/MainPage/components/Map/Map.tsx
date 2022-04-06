@@ -14,8 +14,8 @@ import Popup from "../Popup/Popup";
 import { filterContext } from "./../../../../contexts/FilterContextProvider";
 
 const containerStyle = {
-  width: "70vw",
-  height: "95vh",
+  width: "95vw",
+  height: "90vh",
 };
 
 const Map = () => {
